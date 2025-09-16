@@ -100,7 +100,7 @@ setx GOOGLE_API_KEY "your_api_key_here"
 
 ### 5️⃣ Run the Streamlit App
 ```bash
-streamlit run resume_skills.py
+streamlit run skill_match.py
 ```
 
 ---
