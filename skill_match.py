@@ -46,7 +46,7 @@ Your task is to analyze the resume and job description provided, and produce a d
    - Summarize the applicant’s background, strengths, and key experience relevant to the JD.
 
 2. **ATS Match Analysis**  
-   - Predicted ATS Score in a range.  
+   - Predicted ATS Score: give a range (e.g., 60–70%).  
    - Highlight **matching keywords/skills** (table format).  
    - Highlight **missing/weak keywords** that should be added (table format).  
 
