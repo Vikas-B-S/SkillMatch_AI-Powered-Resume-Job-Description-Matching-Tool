@@ -11,7 +11,7 @@ resume_text = job_desc = None
 
 #Upload Resume
 st.sidebar.title(':blue[Upload Your Resume [PDF Only]]')
-file = st.sidebar.file_uploader('Resume', type=['PDF'])
+file = st.sidebar.file_uploader(':blue[Resume]', type=['PDF'])
 if file:
     resume_text = text_extractor(file)
 
@@ -27,7 +27,7 @@ tips = '''Follow these steps to proceed:
 
 st.write(tips)
 
-job_desc = st.text_area('Copy and Paste the Job Description here[Press ctrl + enter]', max_chars=100000)
+job_desc = st.text_area('Copy and Paste the Job Description here [Press ctrl + enter]', max_chars=100000)
 
 prompt = f"""
 You are an expert ATS (Applicant Tracking System) and career consultant. 
