@@ -18,7 +18,7 @@ if file:
 #Lets Define the Main Page
 
 st.title('SkillMatch: AI-Powered Resume & Job Description Matching Tool')
-st.markdown('#### This application will match your resume and the job description. It will create a detailed report on the match')
+st.markdown('#### This application will match your resume and the job description. It will create a detailed report on the match.')
 
 tips = '''Follow these steps to proceed:
 * Upload your updated resume in the sidebar. (PDF only)
