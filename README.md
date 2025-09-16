@@ -106,7 +106,7 @@ streamlit run resume_skills.py
 ---
 
 ## 🌍 Live Demo
-Try it here: 
+Try it here: https://skillmatch-ai-powered-resume-job-description-matching-tool.streamlit.app/
 
 ---
 
