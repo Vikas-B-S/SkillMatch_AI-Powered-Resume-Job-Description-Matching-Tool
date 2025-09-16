@@ -17,7 +17,7 @@ if file:
 
 #Lets Define the Main Page
 
-st.title('SKILLMATCH: Ai Assisted Skill Matching Tool')
+st.title('SkillMatch: AI-Powered Resume & Job Description Matching Tool')
 st.markdown('#### This application will match your resume and the job description. It will create a detailed report on the match')
 
 tips = '''Follow these steps to proceed:
@@ -29,20 +29,53 @@ st.write(tips)
 
 job_desc = st.text_area('Copy and Paste the Job Description here[Press ctrl + enter]', max_chars=100000)
 
-prompt = f'''Assume you are an expert in skill matching and creating profile.
-Match the following resume with the job description provided by the user.
+prompt = f"""
+You are an expert ATS (Applicant Tracking System) and career consultant. 
+Your task is to analyze the resume and job description provided, and produce a detailed, structured evaluation.
 
-resume = {resume_text}
-job description = {job_desc}
+### Input Data:
+- Resume Text:
+{resume_text}
 
-your output should follow as
-* Give a brief description of the applicant in 3 to 5 lines.
-* Give a range expected ATS score along the the matching and non matching keyword.
-* Give the chances  of getting shortlisted for the position in percentage.
-* Perform SWOT analysis and discuss each everything in bullet points.
-* Suggest what all improvement can be made on the resume uploaded by the user in order to get better ATS and increase in percentage of getting shortlisted.
-* Also create two customised resume as per the the job description provides to get better ATS and increase in percentage of getting shortlisted.
-* Use bullet points and tables wherever required.'''
+- Job Description:
+{job_desc}
+
+### Output Requirements:
+
+1. **Candidate Overview (3–5 lines)**  
+   - Summarize the applicant’s background, strengths, and key experience relevant to the JD.
+
+2. **ATS Match Analysis**  
+   - Predicted ATS Score: give a range (e.g., 60–70%).  
+   - Highlight **matching keywords/skills** (table format).  
+   - Highlight **missing/weak keywords** that should be added (table format).  
+
+3. **Shortlist Probability**  
+   - Give the estimated probability of getting shortlisted (%) with a one-line justification.
+
+4. **SWOT Analysis** (bullet points)  
+   - **Strengths** (skills & experience aligned with JD).  
+   - **Weaknesses** (gaps or missing competencies).  
+   - **Opportunities** (where resume can be improved to stand out).  
+   - **Threats** (factors reducing chances like lack of certifications, limited domain exposure, etc.).  
+
+5. **Improvement Recommendations**  
+   - Actionable edits to improve ATS compatibility (e.g., adding keywords, reformatting sections, quantifying achievements).  
+   - Mention at least **3–5 specific improvements**.
+
+6. **Customized Resume Versions**  
+   - **Version 1:** Focused on technical/skill alignment (insert missing keywords).  
+   - **Version 2:** Focused on achievements and results (rewrite experience with quantifiable impact).  
+   - Provide bullet-pointed examples of how job experiences should be rewritten for better ATS results.  
+
+### Formatting:
+- Use **headings, bullet points, and tables** where needed.  
+- Keep content professional and concise.  
+- Prioritize **ATS-friendly keywords**. 
+
+Give a proper conclusion at last.
+"""
+
 
 if job_desc:
     if resume_text:
@@ -50,3 +83,7 @@ if job_desc:
         st.write(response.text)
     else: 
         st.write('Please upload the resume and provide job description')
+
+
+
+
